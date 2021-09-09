@@ -19,15 +19,18 @@
 
 
     <div class="container-fluid">
-        <h3>Welcome to the Ancients Reborn Library</h3>
-        <p>Here you will find all the information you need in regards to the game <a href="https://xislegames.com/ancients-reborn">Ancients Reborn</a>.</p>
-        <p>Navigate around to find guides, calculators, fastest xp rates, gear, monster data, locations and more!</p>
-        <p>Ancients Reborn Discord: <a href="https://discord.gg/CdzJp3B"><img src="/Images/discord.png" alt="discord" style="height:40px;"></a></p>
-        <p>Download the game: <a href="https://play.google.com/store/apps/details?id=com.sensoryplayapps.adventure&hl=en_GB"><i class="fa fa-android" style="font-size:36px"></i></a></p>
+        <table class="table" id="MonsterData">
+            <thead>
+                
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
     </div>
     <script>
         $("#NavBar").load("/Shared/nav.html");
-        var sf = "https://docs.google.com/spreadsheets/d/1WPoeAjvnXB--yG0qEuUnpSPaiRwJ9TZL3UtEalEmD2o/gviz/tq?tqx=out:json";
+        var sf = "https://docs.google.com/spreadsheets/d/1hIFjop_Q-edaJRizxKjLeJeyedkQ5m7YSNlLNMaPLhM/gviz/tq?tqx=out:json";
         $.ajax({ url: sf, type: 'GET', dataType: 'text' })
             .done(function (data) {
                 const r = data.match(/google\.visualization\.Query\.setResponse\(([\s\S\w]+)\)/);
@@ -36,6 +39,22 @@
                     const table = obj.table;
                     const header = table.cols.map(({ label }) => label);
                     const rows = table.rows.map(({ c }) => c.map(({ v }) => v));
+
+                    var headerstring = "";
+                    for (var i = 0; i < header.length; i++) {
+                        headerstring += "<td>" + header[0] + "</td>"
+                    }
+                    $("#MonsterData").find("thead").html("<tr>" + headerstring + "</tr>")
+
+                    var bodystring = "";
+                    for (var i = 0; i < rows.length; i++) {
+                        bodystring += "<tr>";
+                        for (var j = 0; j < rows[i].length; j++) {
+                            bodystring += "<td>" + rows[i][j] + "</td>";
+                        }
+                        bodystring += "</tr>";
+                    }
+                    $("#MonsterData").find("tbody").html(bodystring)
 
                     console.log(header);
                     console.log(rows);
