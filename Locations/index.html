@@ -17,6 +17,10 @@
         #LocationData tbody tr:not(.hiddensearch):nth-child(odd) {
             background-color: lightgray;
         }
+
+        .locationImg{
+            width: 250px;
+        }
     </style>
 </head>
 <body>
@@ -103,7 +107,7 @@
                             }
 
                             if (table.rows[i].c[1] != null) {
-                                bodystring += "<td><image onclick='popup(this,\"" + table.rows[i].c[0].v + "\")' src='" + table.rows[i].c[1].v + "' alt='" + table.rows[i].c[0].v + " Location Image' /></td>"//Image
+                                bodystring += "<td><image class='locationImg' onclick='popup(this,\"" + table.rows[i].c[0].v + "\")' src='" + table.rows[i].c[1].v + "' alt='" + table.rows[i].c[0].v + " Location Image' /></td>"//Image
                             }
                             else {
                                 bodystring += "<td></td>"//Image
