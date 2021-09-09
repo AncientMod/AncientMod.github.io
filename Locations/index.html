@@ -72,7 +72,7 @@
                             bodystring += "<tr>";
                             bodystring += "<td>" + table.rows[i].c[0].v + "</td>";//Name
                             bodystring += "<td>" + table.rows[i].c[2].v + "</td>"//Amenities
-                            bodystring += "<td>" + table.rows[i].c[1].v + "</td>"//Image
+                            bodystring += "<td><image src='" + table.rows[i].c[1].v + "' alt='" + table.rows[i].c[0].v + " Location Image' /></td>"//Image
                             bodystring += "</tr>";
                         }
                     }
