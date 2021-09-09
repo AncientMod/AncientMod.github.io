@@ -39,21 +39,16 @@
             </tbody>
         </table>
     </div>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <img />
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -108,7 +103,7 @@
                             }
 
                             if (table.rows[i].c[1] != null) {
-                                bodystring += "<td><image onclick='popup(this)' src='" + table.rows[i].c[1].v + "' alt='" + table.rows[i].c[0].v + " Location Image' /></td>"//Image
+                                bodystring += "<td><image onclick='popup(this,\"" + table.rows[i].c[0].v + "\")' src='" + table.rows[i].c[1].v + "' alt='" + table.rows[i].c[0].v + " Location Image' /></td>"//Image
                             }
                             else {
                                 bodystring += "<td></td>"//Image
@@ -148,8 +143,10 @@
             });
         }
 
-        function popup(that) {
+        function popup(that, name) {
             var url = $(that).attr("src");
+            $("#exampleModal").find("img").attr("src", url);
+            $("#exampleModalLabel").text(name);
             console.log(url);
             myModal.show();
         }
