@@ -106,15 +106,15 @@
         function listMajors() {
             gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: '1WPoeAjvnXB--yG0qEuUnpSPaiRwJ9TZL3UtEalEmD2o',
-                range: 'Class Data!A2:E',
+                range: 'Isle of Armor!A2:D',
             }).then(function (response) {
                 var range = response.result;
                 if (range.values.length > 0) {
-                    appendPre('Name, Major:');
+                    appendPre('Name, Type:');
                     for (i = 0; i < range.values.length; i++) {
                         var row = range.values[i];
                         // Print columns A and E, which correspond to indices 0 and 4.
-                        appendPre(row[0] + ', ' + row[4]);
+                        appendPre(row[1] + ', ' + row[2]);
                     }
                 } else {
                     appendPre('No data found.');
