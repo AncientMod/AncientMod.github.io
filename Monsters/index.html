@@ -30,7 +30,7 @@
     </div>
     <script>
         $("#NavBar").load("/Shared/nav.html");
-        var sf = "https://docs.google.com/spreadsheets/d/1hIFjop_Q-edaJRizxKjLeJeyedkQ5m7YSNlLNMaPLhM/gviz/tq?tqx=out:json";
+        var sf = "https://docs.google.com/spreadsheets/d/1hIFjop_Q-edaJRizxKjLeJeyedkQ5m7YSNlLNMaPLhM/gviz/tq?tqx=out:json&gid=1904104148";
         $.ajax({ url: sf, type: 'GET', dataType: 'text' })
             .done(function (data) {
                 console.log("data");
