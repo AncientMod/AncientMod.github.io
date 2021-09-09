@@ -89,11 +89,17 @@
         function search() {
             var searchstring = $("#monsterSearch").val();
             $("#MonsterData tbody").find("tr").each(function () {
-                if (searchstring == "" || $(this).text().toLowerCase().indexOf(searchstring) >= 0) {
+                $(this).addClass("hiddensearch");
+
+                if (searchstring == "") {
                     $(this).removeClass("hiddensearch");
                 }
-                else {
-                    $(this).addClass("hiddensearch");
+                else if ($(this).text().toLowerCase().indexOf(searchstring) >= 0) {
+                    $(this).find("td").each(function () {
+                        if ($(this).text().toLowerCase().indexOf(searchstring) >= 0) {
+                            $(this).parent().addClass("hiddensearch");
+                        }
+                    });
                 }
             });
         }
