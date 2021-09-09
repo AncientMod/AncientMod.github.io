@@ -7,13 +7,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav" id="NavBarUL">
-            <li class="nav-item"><a class="nav-link" href="Combat">Combat</a></li>
-            <li class="nav-item"><a class="nav-link" href="Gear">Gear</a></li>
-            <li class="nav-item"><a class="nav-link" href="Guides">Guides</a></li>
-            <li class="nav-item"><a class="nav-link" href="Images">Images</a></li>
-            <li class="nav-item"><a class="nav-link" href="Locations">Locations</a></li>
-            <li class="nav-item"><a class="nav-link" href="Monsters">Monsters</a></li>
-            <li class="nav-item"><a class="nav-link" href="Skilling">Skilling</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Combat">Combat</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Gear">Gear</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Guides">Guides</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Images">Images</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Locations">Locations</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Monsters">Monsters</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Skilling">Skilling</a></li>
         </ul>
     </div>
 </div>
@@ -26,7 +26,7 @@
         if (data != null) {
             for (let file of data) {
                 if (file.type == "dir" && file.path.indexOf("Shared") == -1) {
-                    htmlString += `<li class="nav-item"><a class="nav-link" href="${file.path}">${file.name}</a></li>`;
+                    htmlString += `<li class="nav-item"><a class="nav-link" href="/${file.path}">${file.name}</a></li>`;
                 }
             }
         }
