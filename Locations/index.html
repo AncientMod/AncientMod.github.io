@@ -71,7 +71,13 @@
                             console.log(table.rows[i]);
                             bodystring += "<tr>";
                             bodystring += "<td>" + table.rows[i].c[0].v + "</td>";//Name
-                            bodystring += "<td>" + table.rows[i].c[2].v + "</td>"//Amenities
+                            if (table.rows[i].c[2].v != "null") {
+                                bodystring += "<td>" + table.rows[i].c[2].v + "</td>"//Amenities
+                            }
+                            else {
+                                bodystring += "<td></td>"//Amenities
+                            }
+                            
                             if (table.rows[i].c[1] != null) {
                                 bodystring += "<td><image onclick='popup(this)' src='" + table.rows[i].c[1].v + "' alt='" + table.rows[i].c[0].v + " Location Image' /></td>"//Image
                             }
