@@ -33,15 +33,12 @@
         var sf = "https://docs.google.com/spreadsheets/d/1hIFjop_Q-edaJRizxKjLeJeyedkQ5m7YSNlLNMaPLhM/gviz/tq?tqx=out:json&gid=1904104148";
         $.ajax({ url: sf, type: 'GET', dataType: 'text' })
             .done(function (data) {
-                console.log("data");
-                console.log(data);
+
                 const r = data.match(/google\.visualization\.Query\.setResponse\(([\s\S\w]+)\)/);
-                console.log("r");
-                console.log(r);
+
                 if (r && r.length == 2) {
                     const obj = JSON.parse(r[1]);
-                    console.log("obj");
-                    console.log(obj);
+
                     const table = obj.table;
                     console.log("table");
                     console.log(table);
@@ -55,6 +52,8 @@
                     //}).map(function (img) { return img.src; })
                     
                     //const rows = table.rows.map(({ c }) => c.map(({ v }) => v));
+                    console.log("table.rows");
+                    console.log(table.rows);
                     const rows = table.rows.filter(function (row) {
                         if (row === null) {
                             return false; // skip
