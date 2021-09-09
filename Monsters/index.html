@@ -33,6 +33,8 @@
         var sf = "https://docs.google.com/spreadsheets/d/1hIFjop_Q-edaJRizxKjLeJeyedkQ5m7YSNlLNMaPLhM/gviz/tq?tqx=out:json";
         $.ajax({ url: sf, type: 'GET', dataType: 'text' })
             .done(function (data) {
+                console.log("data");
+                console.log(data);
                 const r = data.match(/google\.visualization\.Query\.setResponse\(([\s\S\w]+)\)/);
                 if (r && r.length == 2) {
                     const obj = JSON.parse(r[1]);
