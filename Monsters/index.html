@@ -61,22 +61,35 @@
                     
 
                     var headerstring = "";
-                    for (var i = 0; i < header.length; i++) {
-                        headerstring += "<td>" + header[i] + "</td>"
-                    }
+                    console.log("header");
+                    console.log(header);
+                    //for (var i = 0; i < header.length; i++) {
+                    //    headerstring += "<td>" + header[i] + "</td>"
+                    //}
+                    headerstring += "<td>" + header[3] + "</td>"
+                    headerstring += "<td>" + header[4] + "</td>"
+                    headerstring += "<td>" + header[6] + "</td>"
+                    headerstring += "<td>" + header[8] + "</td>"
+                    headerstring += "<td>" + header[14] + "</td>"
+                    
                     $("#MonsterData").find("thead").html("<tr>" + headerstring + "</tr>")
 
                     var bodystring = "";
                     for (var i = 0; i < table.rows.length; i++) {
                         bodystring += "<tr>";
-                        for (var j = 0; j < table.rows[i].c.length; j++) {
-                            if (table.rows[i].c[j] == null) {
-                                bodystring += "<td></td>";
-                            }
-                            else {
-                                bodystring += "<td>" + table.rows[i].c[j].v + "</td>";
-                            }
-                        }
+                        //for (var j = 0; j < table.rows[i].c.length; j++) {
+                        //    if (table.rows[i].c[j] == null) {
+                        //        bodystring += "<td></td>";
+                        //    }
+                        //    else {
+                        //        bodystring += "<td>" + table.rows[i].c[j].v + "</td>";
+                        //    }
+                        //}
+                        bodystring += "<td>" + table.rows[i].c[3].v + "</td>"
+                        bodystring += "<td>" + table.rows[i].c[4].v + "</td>"
+                        bodystring += "<td>" + table.rows[i].c[6].v + "</td>"
+                        bodystring += "<td>" + table.rows[i].c[8].v + "</td>"
+                        bodystring += "<td>" + table.rows[i].c[14].v + "</td>"
                         bodystring += "</tr>";
                     }
                     $("#MonsterData").find("tbody").html(bodystring)
