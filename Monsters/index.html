@@ -70,7 +70,7 @@
                     for (var i = 0; i < table.rows.length; i++) {
                         bodystring += "<tr>";
                         for (var j = 0; j < table.rows[i].c.length; j++) {
-                            if (table.rows[i].c[j].v == null) {
+                            if (table.rows[i].c[j] == null) {
                                 bodystring += "<td></td>";
                             }
                             else {
