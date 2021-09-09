@@ -46,7 +46,21 @@
                     console.log("table");
                     console.log(table);
                     const header = table.cols.map(({ label }) => label);
-                    const rows = table.rows.map(({ c }) => c.map(({ v }) => v));
+
+                    //var sources = images.filter(function (img) {
+                    //    if (img.src.split('.').pop() === "json") {
+                    //        return false; // skip
+                    //    }
+                    //    return true;
+                    //}).map(function (img) { return img.src; })
+                    
+                    //const rows = table.rows.map(({ c }) => c.map(({ v }) => v));
+                    const rows = table.rows.filter(function (row) {
+                        if (row === null) {
+                            return false; // skip
+                        }
+                        return true;
+                    }).map(({ c }) => c.map(({ v }) => v));
 
                     var headerstring = "";
                     for (var i = 0; i < header.length; i++) {
