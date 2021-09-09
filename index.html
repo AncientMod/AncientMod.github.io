@@ -44,7 +44,7 @@
                 htmlString += `<li class="nav-item"><a class="nav-link" href="${file.path}">${file.name}</a></li>`;
             }
             
-            document.getElementsByClassName('navbar-nav').innerHTML = htmlString;
+            document.getElementsByClassName('navbar-nav')[0].innerHTML = htmlString;
         })()
     </script>
 </body>
