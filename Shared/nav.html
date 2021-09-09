@@ -7,18 +7,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav" id="NavBarUL">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="Combat">Combat</a></li>
+            <li class="nav-item"><a class="nav-link" href="Gear">Gear</a></li>
+            <li class="nav-item"><a class="nav-link" href="Guides">Guides</a></li>
+            <li class="nav-item"><a class="nav-link" href="Images">Images</a></li>
+            <li class="nav-item"><a class="nav-link" href="Locations">Locations</a></li>
+            <li class="nav-item"><a class="nav-link" href="Monsters">Monsters</a></li>
+            <li class="nav-item"><a class="nav-link" href="Skilling">Skilling</a></li>
         </ul>
     </div>
 </div>
@@ -28,14 +23,17 @@
         const response = await fetch('https://api.github.com/repos/AncientMod/ancientmod.github.io/contents/');
         const data = await response.json();
         let htmlString = '';
-        for (let file of data) {
-            console.log("file");
-            console.log(file);
-            if (file.type == "dir" && file.path.indexOf("shared") == -1) {
-                htmlString += `<li class="nav-item"><a class="nav-link" href="${file.path}">${file.name}</a></li>`;
+        if (data != null) {
+            for (let file of data) {
+                console.log("file");
+                console.log(file);
+                if (file.type == "dir" && file.path.indexOf("Shared") == -1) {
+                    htmlString += `<li class="nav-item"><a class="nav-link" href="${file.path}">${file.name}</a></li>`;
+                }
             }
         }
         
-        document.getElementById('NavBarUL').innerHTML = htmlString;
+        if (htmlString != '')
+            document.getElementById('NavBarUL').innerHTML = htmlString;
     })()
 </script>
