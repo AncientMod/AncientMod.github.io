@@ -72,7 +72,7 @@
                         
 
                         if (table.rows[i].c[4] != null) {
-                            if (jQuery.inArray(table.rows[i].c[9].v, locations) !== -1) {
+                            if (jQuery.inArray(table.rows[i].c[9].v, locations) === -1) {
                                 locations.push(table.rows[i].c[9].v);
                             }
                             bodystring += "<tr>";
