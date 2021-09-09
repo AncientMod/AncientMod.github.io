@@ -96,7 +96,7 @@
                             bodystring += "<tr>";
                             bodystring += "<td>" + table.rows[i].c[0].v + "</td>";//Name
                             if (table.rows[i].c[2].v != null) {
-                                bodystring += "<td>" + table.rows[i].c[2].v.replace(', ', "<br>") + "</td>"//Amenities
+                                bodystring += "<td>" + table.rows[i].c[2].v.replace(/, /g, "<br>") + "</td>"//Amenities
                             }
                             else {
                                 bodystring += "<td></td>"//Amenities
