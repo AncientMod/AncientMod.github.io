@@ -52,10 +52,9 @@
                     //}).map(function (img) { return img.src; })
                     
                     //const rows = table.rows.map(({ c }) => c.map(({ v }) => v));
-                    console.log("table.rows");
-                    console.log(table.rows);
-                    console.log("table.rows[0][2]");
-                    console.log(table.rows[0][2]);
+                    
+                    console.log("table.rows.get('0')");
+                    console.log(table.rows.get('0'));
                     const rows = table.rows.filter(function (row) {
                         if (row === null) {
                             return false; // skip
