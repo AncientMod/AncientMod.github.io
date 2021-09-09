@@ -63,16 +63,19 @@
                     headerstring += "<td>Image</td>";
 
                     $("#LocationData").find("thead").html("<tr>" + headerstring + "</tr>")
+                    console.log("table")
+                    console.log(table)
 
                     var bodystring = "";
                     for (var i = 0; i < table.rows.length; i++) {
-
+                        console.log("table.rows")
+                        console.log(table.rows)
 
                         if (table.rows[i].c[4] != null) {
                             bodystring += "<tr>";
-                            bodystring += "<td>" + table.rows[i].c[1].v + "</td>";//Name
-                            bodystring += "<td>" + table.rows[i].c[3].v + "</td>"//Amenities
-                            bodystring += "<td>" + table.rows[i].c[2].v + "</td>"//Image
+                            bodystring += "<td>" + table.rows[i].c[0].v + "</td>";//Name
+                            bodystring += "<td>" + table.rows[i].c[2].v + "</td>"//Amenities
+                            bodystring += "<td>" + table.rows[i].c[1].v + "</td>"//Image
                             bodystring += "</tr>";
                         }
                     }
