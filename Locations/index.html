@@ -67,6 +67,8 @@
                     var bodystring = "";
                     for (var i = 0; i < table.rows.length; i++) {
                         if (table.rows[i].c[0] != null) {
+                            console.log("table.rows[i].c[1]");
+                            console.log(table.rows[i].c[1]);
                             bodystring += "<tr>";
                             bodystring += "<td>" + table.rows[i].c[0].v + "</td>";//Name
                             bodystring += "<td>" + table.rows[i].c[2].v + "</td>"//Amenities
