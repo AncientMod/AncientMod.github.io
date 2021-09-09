@@ -66,11 +66,11 @@
                     //for (var i = 0; i < header.length; i++) {
                     //    headerstring += "<td>" + header[i] + "</td>"
                     //}
-                    headerstring += "<td>" + header[3] + "</td>"
                     headerstring += "<td>" + header[4] + "</td>"
-                    headerstring += "<td>" + header[6] + "</td>"
-                    headerstring += "<td>" + header[8] + "</td>"
-                    headerstring += "<td>" + header[14] + "</td>"
+                    headerstring += "<td>" + header[5] + "</td>"
+                    headerstring += "<td>" + header[7] + "</td>"
+                    headerstring += "<td>" + header[9] + "</td>"
+                    headerstring += "<td>" + header[15] + "</td>"
                     
                     $("#MonsterData").find("thead").html("<tr>" + headerstring + "</tr>")
 
@@ -86,11 +86,11 @@
                         //        bodystring += "<td>" + table.rows[i].c[j].v + "</td>";
                         //    }
                         //}
-                        bodystring += "<td>" + table.rows[i].c[3].v + "</td>"
                         bodystring += "<td>" + table.rows[i].c[4].v + "</td>"
+                        bodystring += "<td>" + table.rows[i].c[5].v + "</td>"
                         bodystring += "<td>" + table.rows[i].c[6].v + "</td>"
-                        bodystring += "<td>" + table.rows[i].c[8].v + "</td>"
-                        bodystring += "<td>" + table.rows[i].c[14].v + "</td>"
+                        bodystring += "<td>" + table.rows[i].c[9].v + "</td>"
+                        bodystring += "<td>" + table.rows[i].c[15].v + "</td>"
                         bodystring += "</tr>";
                     }
                     $("#MonsterData").find("tbody").html(bodystring)
