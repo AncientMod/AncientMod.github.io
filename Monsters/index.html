@@ -54,8 +54,6 @@
                     
                     const header = table.cols.map(({ label }) => label);
 
-                    
-
                     var headerstring = "";
                     
                     headerstring += "<td>Name</td>";// + header[4] + "</td>"
@@ -67,14 +65,10 @@
                     $("#MonsterData").find("thead").html("<tr>" + headerstring + "</tr>")
 
                     var bodystring = "";
-                    var locations = new Array();
                     for (var i = 0; i < table.rows.length; i++) {
                         
 
                         if (table.rows[i].c[4] != null) {
-                            if (jQuery.inArray(table.rows[i].c[9].v, locations) === -1) {
-                                locations.push(table.rows[i].c[9].v);
-                            }
                             bodystring += "<tr>";
                             bodystring += "<td>" + table.rows[i].c[4].v + "</td>";//Name
                             bodystring += "<td>" + table.rows[i].c[5].v + "</td>"//Level
@@ -84,7 +78,6 @@
                             bodystring += "</tr>";
                         }
                     }
-                    console.log(locations)
                     $("#MonsterData").find("tbody").html(bodystring)
 
                 }
