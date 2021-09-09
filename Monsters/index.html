@@ -67,19 +67,24 @@
                     $("#MonsterData").find("thead").html("<tr>" + headerstring + "</tr>")
 
                     var bodystring = "";
+                    var locations = new Array();
                     for (var i = 0; i < table.rows.length; i++) {
                         
 
                         if (table.rows[i].c[4] != null) {
+                            if (jQuery.inArray(table.rows[i].c[9].v, myarray) !== -1) {
+                                locations.push(table.rows[i].c[9].v);
+                            }
                             bodystring += "<tr>";
-                            bodystring += "<td>" + table.rows[i].c[4].v + "</td>"
-                            bodystring += "<td>" + table.rows[i].c[5].v + "</td>"
-                            bodystring += "<td>" + table.rows[i].c[7].v + "</td>"
-                            bodystring += "<td>" + table.rows[i].c[9].v + "</td>"
-                            bodystring += "<td>" + table.rows[i].c[15].v + "</td>"
+                            bodystring += "<td>" + table.rows[i].c[4].v + "</td>";//Name
+                            bodystring += "<td>" + table.rows[i].c[5].v + "</td>"//Level
+                            bodystring += "<td>" + table.rows[i].c[7].v + "</td>"//Star
+                            bodystring += "<td>" + table.rows[i].c[9].v + "</td>"//Location
+                            bodystring += "<td>" + table.rows[i].c[15].v + "</td>"//Drops
                             bodystring += "</tr>";
                         }
                     }
+                    console.log(locations)
                     $("#MonsterData").find("tbody").html(bodystring)
 
                 }
