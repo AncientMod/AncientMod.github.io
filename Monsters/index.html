@@ -49,31 +49,13 @@
                     const obj = JSON.parse(r[1]);
 
                     const table = obj.table;
-                    console.log("table");
-                    console.log(table);
+                    
                     const header = table.cols.map(({ label }) => label);
 
-                    //var sources = images.filter(function (img) {
-                    //    if (img.src.split('.').pop() === "json") {
-                    //        return false; // skip
-                    //    }
-                    //    return true;
-                    //}).map(function (img) { return img.src; })
-
-                    //const rows = table.rows.map(({ c }) => c.map(({ v }) => v));
-                    console.log("table.rows");
-                    console.log(typeof table.rows);
-
-                    console.log("table.rows[0].c[2].v");
-                    console.log(table.rows[0].c[2].v);
                     
 
                     var headerstring = "";
-                    console.log("header");
-                    console.log(header);
-                    //for (var i = 0; i < header.length; i++) {
-                    //    headerstring += "<td>" + header[i] + "</td>"
-                    //}
+                    
                     headerstring += "<td>Name</td>";// + header[4] + "</td>"
                     headerstring += "<td>Level</td>";// + header[5] + "</td>"
                     headerstring += "<td>Star</td>";// + header[7] + "</td>"
@@ -84,7 +66,7 @@
 
                     var bodystring = "";
                     for (var i = 0; i < table.rows.length; i++) {
-                        console.log(table.rows[i]);
+                        
 
                         if (table.rows[i].c[4] != null) {
                             bodystring += "<tr>";
@@ -98,8 +80,6 @@
                     }
                     $("#MonsterData").find("tbody").html(bodystring)
 
-                    console.log(header);
-                    console.log(rows);
                 }
             })
             .fail((e) => console.log(e.status));
@@ -107,7 +87,7 @@
         function search() {
             var searchstring = $("#monsterSearch").val();
             $("#MonsterData tbody").find("tr").each(function () {
-                if (searchstring == "" || $(this).text().indexof(searchstring) >= 0) {
+                if (searchstring == "" || $(this).text().toLowerCase().indexOf(searchstring) >= 0) {
                     $(this).removeClass("hiddensearch");
                 }
                 else {
