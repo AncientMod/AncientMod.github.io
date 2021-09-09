@@ -41,7 +41,9 @@
             const data = await response.json();
             let htmlString = '';
             for (let file of data) {
-                htmlString += `<li class="nav-item"><a class="nav-link" href="${file.path}">${file.name}</a></li>`;
+                if (file.name.indexOf(".html") == -1) {
+                    htmlString += `<li class="nav-item"><a class="nav-link" href="${file.path}">${file.name}</a></li>`;
+                }
             }
             
             document.getElementsByClassName('navbar-nav')[0].innerHTML = htmlString;
