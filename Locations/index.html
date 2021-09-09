@@ -62,6 +62,13 @@
             </div>
         </div>
     </div>
+    <script type="module">
+        import { Toast } from 'bootstrap.esm.min.js'
+
+        Array.from(document.querySelectorAll('.toast'))
+            .forEach(toastNode => new Toast(toastNode))
+    </script>
+
     <script>
         var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
             keyboard: false
