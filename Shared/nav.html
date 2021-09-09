@@ -30,7 +30,7 @@
         for (let file of data) {
             console.log("file");
             console.log(file);
-            if (file.name.indexOf(".html") == -1 && file.path.indexOf("shared") == -1) {
+            if (file.name.indexOf(".json") == -1 && file.name.indexOf(".html") == -1 && file.path.indexOf("shared") == -1) {
                 htmlString += `<li class="nav-item"><a class="nav-link" href="${file.path}">${file.name}</a></li>`;
             }
         }
