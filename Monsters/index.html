@@ -95,11 +95,16 @@
                     $(this).removeClass("hiddensearch");
                 }
                 else if ($(this).text().toLowerCase().indexOf(searchstring) >= 0) {
+                    var td = new Array();
                     $(this).find("td").each(function () {
                         if ($(this).text().toLowerCase().indexOf(searchstring) >= 0) {
-                            $(this).parent().addClass("hiddensearch");
+
+                            td.push($(this).text().toLowerCase());
                         }
                     });
+                    if (td.length > 0) {
+                        $(this).addClass("hiddensearch");
+                    }
                 }
             });
         }
