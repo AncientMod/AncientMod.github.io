@@ -12,20 +12,20 @@
 
 </head>
 <body>
-    <h1>Monster List</h1>
+
     <div id="stylesheet"></div>
     <nav class="navbar navbar-expand-sm navbar-dark ARNav" id="NavBar">
 
     </nav>
 
+    <h1>Monster List</h1>
 
     <div class="container-fluid">
         <table class="table" id="MonsterData">
             <thead>
-                
+
             </thead>
             <tbody>
-
             </tbody>
         </table>
     </div>
@@ -51,19 +51,14 @@
                     //    }
                     //    return true;
                     //}).map(function (img) { return img.src; })
-                    
+
                     //const rows = table.rows.map(({ c }) => c.map(({ v }) => v));
                     console.log("table.rows");
                     console.log(typeof table.rows);
 
-                    console.log("table.rows[0].c[2]");
-                    console.log(table.rows[0].c[2]);
-                    const rows = table.rows.filter(function (row) {
-                        if (row === null) {
-                            return false; // skip
-                        }
-                        return true;
-                    }).map(({ c }) => c.map(({ v }) => v));
+                    console.log("table.rows[0].c[2].v");
+                    console.log(table.rows[0].c[2].v);
+                    
 
                     var headerstring = "";
                     for (var i = 0; i < header.length; i++) {
@@ -72,10 +67,10 @@
                     $("#MonsterData").find("thead").html("<tr>" + headerstring + "</tr>")
 
                     var bodystring = "";
-                    for (var i = 0; i < rows.length; i++) {
+                    for (var i = 0; i < table.rows.length; i++) {
                         bodystring += "<tr>";
-                        for (var j = 0; j < rows[i].length; j++) {
-                            bodystring += "<td>" + rows[i][j] + "</td>";
+                        for (var j = 0; j < table.rows[i].c.length; j++) {
+                            bodystring += "<td>" + table.rows[i].c[j].v + "</td>";
                         }
                         bodystring += "</tr>";
                     }
