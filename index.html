@@ -34,6 +34,20 @@
             </div>
         </div>
     </div>
+    <script>
+        var spreadsheetID = "1hIFjop_Q-edaJRizxKjLeJeyedkQ5m7YSNlLNMaPLhM";
+        var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/1/public/values?alt=json";
 
+        $.getJSON(url, function (data) {
+            var entry = data.feed.entry;
+            console.log("entry");
+            console.log(entry);
+            $(entry).each(function () {
+                //alert(this.gsx$propertyid.$t); //or whatever action of using the value
+                console.log("this");
+                console.log(this);
+            });
+        });
+    </script>
 </body>
 </html>
