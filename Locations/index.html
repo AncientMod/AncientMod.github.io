@@ -125,7 +125,7 @@
             .fail((e) => console.log(e.status));
 
         function search() {
-            var searchstring = $("#LocationSearch").val();
+            var searchstring = $("#LocationSearch").val().toLowerCase();
             $("#LocationData tbody").find("tr").each(function () {
                 $(this).addClass("hiddensearch");
 

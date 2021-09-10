@@ -85,7 +85,7 @@
             .fail((e) => console.log(e.status));
 
         function search() {
-            var searchstring = $("#monsterSearch").val();
+            var searchstring = $("#monsterSearch").val().toLowerCase();
             $("#MonsterData tbody").find("tr").each(function () {
                 $(this).addClass("hiddensearch");
 
