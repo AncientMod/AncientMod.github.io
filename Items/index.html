@@ -57,24 +57,26 @@
                     var headerstring = "";
 
                     headerstring += "<td>Name</td>";// + header[4] + "</td>"
-                    headerstring += "<td>Level</td>";// + header[5] + "</td>"
-                    headerstring += "<td>Star</td>";// + header[7] + "</td>"
-                    headerstring += "<td>Location</td>";// + header[9] + "</td>"
-                    headerstring += "<td>Drops</td>";// + header[15] + "</td>"
+                    headerstring += "<td>Description</td>";// + header[5] + "</td>"
+                    headerstring += "<td>Use</td>";// + header[7] + "</td>"
+                    headerstring += "<td>Type</td>";// + header[9] + "</td>"
+                    headerstring += "<td>Rarity</td>";// + header[15] + "</td>"
+                    headerstring += "<td>Tradeable</td>";// + header[15] + "</td>"
 
                     $("#ItemData").find("thead").html("<tr>" + headerstring + "</tr>")
 
                     var bodystring = "";
-                    for (var i = 0; i < table.rows.length; i++) {
+                    for (var i = 1; i < table.rows.length; i++) {
 
                         console.log(table.rows[i]);
-                        if (table.rows[i].c[4] != null) {
+                        if (table.rows[i].c[1] != null) {
                             bodystring += "<tr>";
-                            bodystring += "<td>" + table.rows[i].c[4].v + "</td>";//Name
-                            bodystring += "<td>" + table.rows[i].c[5].v + "</td>"//Level
-                            bodystring += "<td>" + table.rows[i].c[7].v + "</td>"//Star
-                            bodystring += "<td>" + table.rows[i].c[9].v + "</td>"//Location
-                            bodystring += "<td>" + table.rows[i].c[15].v + "</td>"//Drops
+                            bodystring += "<td>" + table.rows[i].c[1].v + "</td>";//Name
+                            bodystring += "<td>" + table.rows[i].c[2].v + "</td>"//Level
+                            bodystring += "<td>" + table.rows[i].c[3].v + "</td>"//Star
+                            bodystring += "<td>" + table.rows[i].c[4].v + "</td>"//Location
+                            bodystring += "<td>" + table.rows[i].c[7].v + "</td>"//Drops
+                            bodystring += "<td>" + table.rows[i].c[9].v + "</td>"//Drops
                             bodystring += "</tr>";
                         }
                     }
